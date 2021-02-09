@@ -1,6 +1,6 @@
 # 个人做毕设时随手跑的实验（代码略微改了一丢丢）
 
-<font size =4 face=宋体>&emsp;&emsp;``SSD300``，迭代次数：``55000``。
+<font size =4 face=宋体>&emsp;&emsp;``SSD300``，迭代次数：``55000``。<br>
 &emsp;&emsp;下面是最终验证``测试集``的结果。
 </font>
 <br>
@@ -181,9 +181,9 @@ Results should be very close to the official MATLAB eval code.
 </center>
 <br>
 
-<font size =4 face=宋体>&emsp;&emsp;将迭代次数增加到60000。
-&emsp;&emsp;``SSD300``，迭代次数：``60000``。
-&emsp;&emsp;下面是最终验证``测试集``的结果。
+<font size =4 face=宋体>&emsp;&emsp;将迭代次数增加到60000。<br>
+&emsp;&emsp;``SSD300``，迭代次数：``60000``。<br>
+&emsp;&emsp;下面是最终验证``测试集``的结果。<br>
 </font>
 <br>
 
@@ -586,7 +586,7 @@ return loss_l, loss_c
 ```
 
 
-&emsp;&emsp;我承认：无法理解大佬们的表达是因为我笨。
+<font size =4 face=宋体>&emsp;&emsp;我承认：无法理解大佬们的表达是因为我笨。<br>
 &emsp;&emsp;但是，我还是觉得这描述模棱两可。
 </font>
 <br>
@@ -615,7 +615,7 @@ return loss_l, loss_c
 </center>
 <br>
 
-<font size =4 face=宋体>&emsp;&emsp;图17和图18都是截至两个大佬描述的步骤，点击图号即可跳转至对应页面。
+<font size =4 face=宋体>&emsp;&emsp;图17和图18都是截至两个大佬描述的步骤，点击图号即可跳转至对应页面。<br>
 &emsp;&emsp;前面说过，按照他们的修改我得不到预期的实验结果。（可能是我操作有误或者理解错了大佬们的描述~）
 </font>
 <br>
