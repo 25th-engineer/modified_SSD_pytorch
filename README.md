@@ -1,13 +1,656 @@
+<font size =6 color=red face=宋体>&emsp;&emsp;首先声明，本次实验所用源代码修改自[源代码](https://github.com/amdegroot/ssd.pytorch)。
+</font>
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp; **（新增）** 附上mAP随训练迭代次数的变化关系曲线。
+</font>
+<br>
+
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="results/iteration_mAP_curve.png">
+    src="https://img-blog.csdnimg.cn/20210221163655996.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">图 1 mAP随迭代次数的变化趋势</div>
+    padding: 2px;">mAP and iteration curve</div>
 </center>
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp; **（新增）** 附上20类物品（也包括人）的测试准确率随迭代次数的变化关系曲线。<br>
+&emsp;&emsp; 图像依次为：所有物品的变化曲线、前10类物品的变化曲线和后10类物品的变化曲线，之所以分开是为了方便看出变化趋势。
+</font>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210222175321255.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Curve of test accuracy of 20 kinds of items with iteration times</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210222175514903.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Curve of test accuracy of the top 10 kinds of items with iteration times</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210222175640967.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Curve of test accuracy of the last 10 kinds of items with iteration times</div>
+</center>
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp; **（新增）** 各个迭代次数的模型验证``测试集``的结果附在后面（见[验证结果](#result)）。
+</font>
+<br>
+
+### 1
+
+<font size =4 face=宋体>&emsp;&emsp;``SSD300``，迭代次数：``55000``。<br>
+&emsp;&emsp;下面是最终验证``测试集``的结果（略，见[验证结果](#result)）。
+</font>
+<br>
+
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153206118.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 1</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153244811.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 2</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153317712.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 3</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153502404.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 4</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153358456.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 5</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153439339.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 6</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153554866.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 7</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210208153624107.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 8</div>
+</center>
+<br>
+
+### 2
+
+<font size =4 face=宋体>&emsp;&emsp;将迭代次数增加到60000。<br>
+&emsp;&emsp;``SSD300``，迭代次数：``60000``。<br>
+&emsp;&emsp;下面是最终验证``测试集``的结果。（略，见[验证结果](#result)）</font>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209213604896.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 9</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209213722462.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 10</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209213754138.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 11</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209213826272.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 12</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209213855112.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 13</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209213927824.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 14</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209214543177.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 15</div>
+</center>
+<br>
+
+
+<font size =4 face=宋体>&emsp;&emsp;本次实验的损失值随迭代次数的变化趋势如图16所示。
+</font>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209214654213.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 16 损失值与迭代次数的关系</div>
+</center>
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp;我修改了一下``multibox_loss.py``里面的``forward``函数，和网上主流介绍的稍微不同（我按照他们那么说的改，训练出的模型在运行``test.py``测试时，只能得到预测框的位置但没有预测的标记结果；运行``eval.py``时只是扫了一遍图片，没有給出任何信息；运行``live.py``时只是输出了原图）。如下所示。
+</font>
+<br>
+
+```python
+    def forward(self, predictions, targets):
+        """Multibox Loss
+        Args:
+            predictions (tuple): A tuple containing loc preds, conf preds,
+            and prior boxes from SSD net.
+                conf shape: torch.size(batch_size,num_priors,num_classes)
+                loc shape: torch.size(batch_size,num_priors,4)
+                priors shape: torch.size(num_priors,4)
+
+            targets (tensor): Ground truth boxes and labels for a batch,
+                shape: [batch_size,num_objs,5] (last idx is the label).
+        """
+        loc_data, conf_data, priors = predictions
+        num = loc_data.size(0)
+        priors = priors[:loc_data.size(1), :]
+        num_priors = (priors.size(0))
+        num_classes = self.num_classes
+
+        # match priors (default boxes) and ground truth boxes
+        loc_t = torch.Tensor(num, num_priors, 4)
+        conf_t = torch.LongTensor(num, num_priors)
+        for idx in range(num):
+            truths = targets[idx][:, :-1].data
+            labels = targets[idx][:, -1].data
+            defaults = priors.data
+            match(self.threshold, truths, defaults, self.variance, labels,
+                  loc_t, conf_t, idx)
+        if self.use_gpu:
+            loc_t = loc_t.cuda()
+            conf_t = conf_t.cuda()
+        # wrap targets
+        loc_t = Variable(loc_t, requires_grad=False)
+        conf_t = Variable(conf_t, requires_grad=False)
+
+        pos = conf_t > 0
+        num_pos = pos.sum(dim=1, keepdim=True)
+
+        # Localization Loss (Smooth L1)
+        # Shape: [batch,num_priors,4]
+        pos_idx = pos.unsqueeze(pos.dim()).expand_as(loc_data)
+        loc_p = loc_data[pos_idx].view(-1, 4)
+        loc_t = loc_t[pos_idx].view(-1, 4)
+        loss_l = F.smooth_l1_loss(loc_p, loc_t, size_average=False)
+
+        # Compute max conf across batch for hard negative mining
+        batch_conf = conf_data.view(-1, self.num_classes)
+        loss_c = log_sum_exp(batch_conf) - batch_conf.gather(1, conf_t.view(-1, 1))
+
+        # Hard Negative Mining
+        loss_c = loss_c.view(num, -1)
+        loss_c[pos] = 0  # filter out pos boxes for now
+        _, loss_idx = loss_c.sort(1, descending=True)
+        _, idx_rank = loss_idx.sort(1)
+        num_pos = pos.long().sum(1, keepdim=True)
+        num_neg = torch.clamp(self.negpos_ratio*num_pos, max=pos.size(1)-1)
+        neg = idx_rank < num_neg.expand_as(idx_rank)
+
+        # Confidence Loss Including Positive and Negative Examples
+        pos_idx = pos.unsqueeze(2).expand_as(conf_data)
+        neg_idx = neg.unsqueeze(2).expand_as(conf_data)
+        conf_p = conf_data[(pos_idx+neg_idx).gt(0)].view(-1, self.num_classes)
+        targets_weighted = conf_t[(pos+neg).gt(0)]
+        loss_c = F.cross_entropy(conf_p, targets_weighted, size_average=False)
+
+        # Sum of losses: L(x,c,l,g) = (Lconf(x, c) + αLloc(x,l,g)) / N
+
+        # N = num_pos.data.sum()
+        # N = num_pos.data.sum().double()
+        loss_l = loss_l.double() # delete or remain?
+        loss_c = loss_c.double() # delete or remain?
+
+        # loss_l /= N # delete or remain?
+        # loss_c /= N # delete or remain?
+        return loss_l, loss_c
+```
+
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp;网上主流的改法似乎（因为个人感觉都语焉不详）是下面这样的。
+</font>
+<br>
+
+```python
+    def forward(self, predictions, targets):
+        """Multibox Loss
+        Args:
+            predictions (tuple): A tuple containing loc preds, conf preds,
+            and prior boxes from SSD net.
+                conf shape: torch.size(batch_size,num_priors,num_classes)
+                loc shape: torch.size(batch_size,num_priors,4)
+                priors shape: torch.size(num_priors,4)
+
+            targets (tensor): Ground truth boxes and labels for a batch,
+                shape: [batch_size,num_objs,5] (last idx is the label).
+        """
+        loc_data, conf_data, priors = predictions
+        num = loc_data.size(0)
+        priors = priors[:loc_data.size(1), :]
+        num_priors = (priors.size(0))
+        num_classes = self.num_classes
+
+        # match priors (default boxes) and ground truth boxes
+        loc_t = torch.Tensor(num, num_priors, 4)
+        conf_t = torch.LongTensor(num, num_priors)
+        for idx in range(num):
+            truths = targets[idx][:, :-1].data
+            labels = targets[idx][:, -1].data
+            defaults = priors.data
+            match(self.threshold, truths, defaults, self.variance, labels,
+                  loc_t, conf_t, idx)
+        if self.use_gpu:
+            loc_t = loc_t.cuda()
+            conf_t = conf_t.cuda()
+        # wrap targets
+        loc_t = Variable(loc_t, requires_grad=False)
+        conf_t = Variable(conf_t, requires_grad=False)
+
+        pos = conf_t > 0
+        num_pos = pos.sum(dim=1, keepdim=True)
+
+        # Localization Loss (Smooth L1)
+        # Shape: [batch,num_priors,4]
+        pos_idx = pos.unsqueeze(pos.dim()).expand_as(loc_data)
+        loc_p = loc_data[pos_idx].view(-1, 4)
+        loc_t = loc_t[pos_idx].view(-1, 4)
+        loss_l = F.smooth_l1_loss(loc_p, loc_t, size_average=False)
+
+        # Compute max conf across batch for hard negative mining
+        batch_conf = conf_data.view(-1, self.num_classes)
+        loss_c = log_sum_exp(batch_conf) - batch_conf.gather(1, conf_t.view(-1, 1))
+
+        # Hard Negative Mining
+        loss_c = loss_c.view(num, -1)
+        loss_c[pos] = 0  # filter out pos boxes for now
+        _, loss_idx = loss_c.sort(1, descending=True)
+        _, idx_rank = loss_idx.sort(1)
+        num_pos = pos.long().sum(1, keepdim=True)
+        num_neg = torch.clamp(self.negpos_ratio*num_pos, max=pos.size(1)-1)
+        neg = idx_rank < num_neg.expand_as(idx_rank)
+
+        # Confidence Loss Including Positive and Negative Examples
+        pos_idx = pos.unsqueeze(2).expand_as(conf_data)
+        neg_idx = neg.unsqueeze(2).expand_as(conf_data)
+        conf_p = conf_data[(pos_idx+neg_idx).gt(0)].view(-1, self.num_classes)
+        targets_weighted = conf_t[(pos+neg).gt(0)]
+        loss_c = F.cross_entropy(conf_p, targets_weighted, size_average=False)
+
+        # Sum of losses: L(x,c,l,g) = (Lconf(x, c) + αLloc(x,l,g)) / N
+
+        # N = num_pos.data.sum()
+        N = num_pos.data.sum().double()
+        loss_l = loss_l.double() # delete or remain?
+        loss_c = loss_c.double() # delete or remain?
+
+        loss_l /= N # delete or remain?
+        loss_c /= N # delete or remain?
+        return loss_l, loss_c
+```
+
+<font size =4 face=宋体>&emsp;&emsp;区别就是有没有
+</font>
+<br>
+
+```python
+N = num_pos.data.sum().double()
+```
+
+<font size =4 face=宋体>&emsp;&emsp;以及
+</font>
+<br>
+
+```python
+loss_l /= N # delete or remain?
+loss_c /= N # delete or remain?
+```
+
+<font size =4 face=宋体>&emsp;&emsp;看到不少大佬都这么写“修改第114行为……”，但我不明白的是直接替换掉``第144行``的代码，还是顺便把
+</font>
+<br>
+
+```python
+loss_l /= N # delete or remain?
+loss_c /= N # delete or remain?
+```
+
+<font size =4 face=宋体>&emsp;&emsp;也删了。
+</font>
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp;也就是，到底是改成：
+</font>
+<br>
+
+```python
+N = num_pos.data.sum().double() 
+loss_l = loss_l.double() 
+loss_c = loss_c.double()
+loss_l /= N
+loss_c /= N
+return loss_l, loss_c
+```
+
+<font size =4 face=宋体>&emsp;&emsp;还是改为：
+</font>
+<br>
+
+```python
+N = num_pos.data.sum().double() 
+loss_l = loss_l.double() 
+loss_c = loss_c.double()
+return loss_l, loss_c
+```
+
+
+<font size =4 face=宋体>&emsp;&emsp;我承认：无法理解大佬们的表达是因为我笨。<br>
+&emsp;&emsp;但是，我还是觉得这描述模棱两可。
+</font>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209220009567.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><a href="https://zhuanlan.zhihu.com/p/92154612" target="_blank">图 17</a></div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209220647955.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><a href="https://blog.csdn.net/qq_40903958/article/details/104553199" target="_blank">图 18</a></div>
+</center>
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp;图17和图18都是截至两个大佬描述的步骤，点击图号即可跳转至对应页面。<br>
+&emsp;&emsp;前面说过，按照他们的修改我得不到预期的实验结果。（可能是我操作有误或者理解错了大佬们的描述~）
+</font>
+<br>
+
+<font size =4 face=宋体>&emsp;&emsp;按照他们的改法，得到的损失函数值随迭代次数的变化趋势似乎更“好看”一点，如图19所示。
+</font>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210209221653411.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 19</div>
+</center>
+
+### 3
+
+<font size =4 face=宋体>&emsp;&emsp;将迭代次数增加到105000。<br>
+&emsp;&emsp;``SSD300``，迭代次数：``105000``。<br>
+&emsp;&emsp;下面是最终验证``测试集``的结果（略，见[验证结果](#result)）。
+</font>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211143026240.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 20</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211143115434.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 21</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211143140708.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 22</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211143408985.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 23</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211143436793.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 24</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211143504238.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 25</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211143528887.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 26</div>
+</center>
+<br>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://img-blog.csdnimg.cn/20210211144507757.jpg">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图 27</div>
+</center>
+<br>
+
+### <span id="result">验证结果</span>
+<font size =4 face=宋体 color=red>&emsp;&emsp;[结果](./results/total_results.txt)
+</font>
+<br>
 <br>
 
 
