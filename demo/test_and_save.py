@@ -14,7 +14,8 @@ from ssd import build_ssd
 
 parser = argparse.ArgumentParser(description='Single Shot MultiBox Detection')
 
-parser.add_argument('--weights', default="/home/river/code/Python/ssd.pytorch-master/weights/ssd300_COCO_60000.pth",
+parser.add_argument('--weights', default="/home/river/Graduation_Project/experiment"
+                                         "/code/Python/ssd.pytorch-master/weights/ssd300_COCO_190000.pth",
                     type=str, help='Trained state_dict file path')
 parser.add_argument('--cuda', default=False, type=bool,
                     help='Use cuda in live demo')
@@ -51,14 +52,18 @@ def cv2_demo(net, transform):
         return frame
 
     # 3
-    true_path = TEST_ROOT + "VOC2007/JPEGImages/"
+    # true_path = TEST_ROOT + "VOC2007/JPEGImages/"
+    true_path = "/home/river/data/self_test/pictures__/"
     allPictures = listdir(true_path)
-    savePath = "/home/river/Graduation_Project/experiment/code/Python/ssd.pytorch-master/result/test_pic_" + "55000/"
+    savePath = "/home/river/Graduation_Project/experiment/code/Python/ssd.pytorch-master/results/test_pic_190000/"
     # the savePath must correspond to the weight version
+    tot = 1
     for picture in allPictures:
         frame = cv2.imread(true_path + picture)
+        print("pic: " + picture + "\n" + str(tot))
         frame = predict(frame)
         cv2.imwrite(savePath + picture, frame)
+        tot += 1
 
 
 if __name__ == '__main__':

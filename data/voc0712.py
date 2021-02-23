@@ -25,7 +25,7 @@ VOC_CLASSES = (  # always index 0
     'sheep', 'sofa', 'train', 'tvmonitor')
 
 # note: if you used our download scripts, this should be right
-TRAIN_ROOT = osp.join(HOME, "data/VOCdevkit_train/")
+VOC_ROOT = osp.join(HOME, "data/VOCdevkit_train/")
 TEST_ROOT = osp.join(HOME, "data/VOCdevkit_test/")
 
 

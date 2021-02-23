@@ -16,7 +16,7 @@ from ssd import build_ssd
 parser = argparse.ArgumentParser(description='Single Shot MultiBox Detection')
 
 parser.add_argument('--weights', default="/home/river/Graduation_Project/experiment/"
-                                         "code/Python/ssd.pytorch-master/weights/ssd300_COCO_60000.pth",
+                                         "code/Python/ssd.pytorch-master/weights/ssd300_COCO_190000.pth",
                     type=str, help='Trained state_dict file path')
 parser.add_argument('--cuda', default=False, type=bool,
                     help='Use cuda in live demo')
@@ -40,7 +40,7 @@ def cv2_demo(net, transform):
         scale = torch.Tensor([width, height, width, height])
         for i in range(detections.size(1)):
             j = 0
-            while detections[0, i, j, 0] >= 0.6:
+            while detections[0, i, j, 0] >= 0.6: # 0.6
                 score = float(detections[0, i, j, 0])
                 pt = (detections[0, i, j, 1:] * scale).cpu().numpy()
                 cv2.rectangle(frame,
@@ -54,7 +54,9 @@ def cv2_demo(net, transform):
 
     # picNum = "000001"
     # frame = cv2.imread(TEST_ROOT + "VOC2007/JPEGImages/" + picNum + ".jpg")
-    frame = cv2.imread("/home/river/data/self_test/w.jpg")
+
+    # frame = cv2.imread("/home/river/data/self_test/u.jpg")
+    frame = cv2.imread("/home/river/data/self_test/pictures__/00260.png")
     frame = predict(frame)
     window_name = 'Object detector'
     cv2.namedWindow(window_name, 0)

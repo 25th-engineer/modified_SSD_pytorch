@@ -1,0 +1,72 @@
+Evaluating detections
+Writing aeroplane VOC results file
+Writing bicycle VOC results file
+Writing bird VOC results file
+Writing boat VOC results file
+Writing bottle VOC results file
+Writing bus VOC results file
+Writing car VOC results file
+Writing cat VOC results file
+Writing chair VOC results file
+Writing cow VOC results file
+Writing diningtable VOC results file
+Writing dog VOC results file
+Writing horse VOC results file
+Writing motorbike VOC results file
+Writing person VOC results file
+Writing pottedplant VOC results file
+Writing sheep VOC results file
+Writing sofa VOC results file
+Writing train VOC results file
+Writing tvmonitor VOC results file
+VOC07 metric? Yes
+AP for aeroplane = 0.7753
+AP for bicycle = 0.8214
+AP for bird = 0.7213
+AP for boat = 0.6573
+AP for bottle = 0.4669
+AP for bus = 0.8267
+AP for car = 0.8423
+AP for cat = 0.8641
+AP for chair = 0.5814
+AP for cow = 0.7993
+AP for diningtable = 0.7358
+AP for dog = 0.8461
+AP for horse = 0.8453
+AP for motorbike = 0.8089
+AP for person = 0.7648
+AP for pottedplant = 0.4659
+AP for sheep = 0.7369
+AP for sofa = 0.7670
+AP for train = 0.8263
+AP for tvmonitor = 0.7367
+Mean AP = 0.7445
+~~~~~~~~
+Results:
+0.775
+0.821
+0.721
+0.657
+0.467
+0.827
+0.842
+0.864
+0.581
+0.799
+0.736
+0.846
+0.845
+0.809
+0.765
+0.466
+0.737
+0.767
+0.826
+0.737
+0.744
+~~~~~~~~
+
+--------------------------------------------------------------
+Results computed with the **unofficial** Python eval code.
+Results should be very close to the official MATLAB eval code.
+--------------------------------------------------------------

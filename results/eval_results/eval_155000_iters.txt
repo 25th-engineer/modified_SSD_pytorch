@@ -1,0 +1,74 @@
+Evaluating detections
+Writing aeroplane VOC results file
+/home/river/Graduation_Project/experiment/code/Python/ssd.pytorch-master/eval.py:150: DeprecationWarning: elementwise comparison failed; this will raise an error in the future.
+  if dets == []:
+Writing bicycle VOC results file
+Writing bird VOC results file
+Writing boat VOC results file
+Writing bottle VOC results file
+Writing bus VOC results file
+Writing car VOC results file
+Writing cat VOC results file
+Writing chair VOC results file
+Writing cow VOC results file
+Writing diningtable VOC results file
+Writing dog VOC results file
+Writing horse VOC results file
+Writing motorbike VOC results file
+Writing person VOC results file
+Writing pottedplant VOC results file
+Writing sheep VOC results file
+Writing sofa VOC results file
+Writing train VOC results file
+Writing tvmonitor VOC results file
+VOC07 metric? Yes
+AP for aeroplane = 0.7950
+AP for bicycle = 0.8261
+AP for bird = 0.7391
+AP for boat = 0.6708
+AP for bottle = 0.4553
+AP for bus = 0.8321
+AP for car = 0.8507
+AP for cat = 0.8771
+AP for chair = 0.5865
+AP for cow = 0.8011
+AP for diningtable = 0.7516
+AP for dog = 0.8419
+AP for horse = 0.8526
+AP for motorbike = 0.8166
+AP for person = 0.7650
+AP for pottedplant = 0.4663
+AP for sheep = 0.7410
+AP for sofa = 0.7663
+AP for train = 0.8571
+AP for tvmonitor = 0.7497
+Mean AP = 0.7521
+~~~~~~~~
+Results:
+0.795
+0.826
+0.739
+0.671
+0.455
+0.832
+0.851
+0.877
+0.587
+0.801
+0.752
+0.842
+0.853
+0.817
+0.765
+0.466
+0.741
+0.766
+0.857
+0.750
+0.752
+~~~~~~~~
+
+--------------------------------------------------------------
+Results computed with the **unofficial** Python eval code.
+Results should be very close to the official MATLAB eval code.
+--------------------------------------------------------------
