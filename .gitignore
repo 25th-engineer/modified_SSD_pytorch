@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+# __pycache__/
 *.py[cod]
 *$py.class
 
@@ -92,13 +92,13 @@ ENV/
 .remote-sync.json
 
 # weights
-weights/
+# weights/
 
 #DS_Store
 .DS_Store
 
 # dev stuff
-eval/
+# eval/
 eval.ipynb
 dev.ipynb
 .vscode/
@@ -110,7 +110,7 @@ data/ssd_dataloader.py
 data/datasets/
 doc/visualize.py
 read_results.py
-ssd300_120000/
+# ssd300_120000/
 demos/live
 webdemo.py
 test_data_aug.py
@@ -118,7 +118,7 @@ test_data_aug.py
 # attributes
 
 # pycharm
-.idea/
+# .idea/
 
 # temp checkout soln
 data/datasets/
