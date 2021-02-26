@@ -1,0 +1,9 @@
+Original project:
+https://github.com/amdegroot/ssd.pytorch
+Modified project:
+https://github.com/25thengineer/modified_SSD_pytorch
+
+训练模型（基于VOC 2007数据集，可用于测试）百度网盘下载链接:
+https://pan.baidu.com/s/1q1Pr74FAkgCV4DzlIrb4Ew 
+提取码:
+figf
